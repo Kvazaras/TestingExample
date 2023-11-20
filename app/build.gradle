@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
+apply plugin: "org.sonarqube"
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 31
     defaultConfig {
         applicationId "com.example.testingexample"
-        minSdkVersion 26
-        targetSdkVersion 29
+        minSdk 31
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -17,9 +18,10 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility 11
+        targetCompatibility 11
     }
+    namespace 'com.example.testingexample'
 }
 
 dependencies {
@@ -29,10 +31,43 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
     testImplementation project(path: ':app')
-    testImplementation project(path: ':app')
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
 }
+
+sonar {
+    properties {
+        property "sonar.projectName", "TestingExample"
+        property "sonar.projectKey", "TestingExample"
+        property "sonar.tests", ["src/test/java"]
+        property "sonar.test.inclusions", "**/*Test*/**"
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.sources", "src/main/java"
+        property "sonar.exclusions", '**/*Test*/**,' +
+                '*.json,' +
+                '**/*test*/**,' +
+                '**/.gradle/**,' +
+                '**/R.class'
+    }
+}
+
+//sonar {
+//    properties {
+//        property "sonar.projectName", "TestingExample"
+//        property "sonar.projectKey", "TestingExample"
+//        property "sonar.host.url", "http://localhost:9000"
+//        property "sonar.tests", ["src/test/java"]
+//        property "sonar.test.inclusions", "**/*Test*/**"
+//        property "sonar.sourceEncoding", "UTF-8"
+//        property "sonar.sources", "src/main/java"
+//        property "sonar.scm.disabled", "true"
+//        property "sonar.exclusions", '**/*Test*/**,' +
+//                '*.json,' +
+//                '**/*test*/**,' +
+//                '**/.gradle/**,' +
+//                '**/R.class'
+//    }
+//}

@@ -14,4 +14,20 @@ public class Utils {
         }
         return String.join(" ", wordsArrayWithoutEmptySpaces);
     }
+
+    public static String removeNumbersFromString(String inputText){
+        return inputText.replaceAll("[0-9]", "");
+    }
+
+    public static String removeLettersFromString(String inputText){
+        return inputText.replaceAll("[a-zA-Z]", "");
+    }
+
+    public static String changeCharactersToUnicode(String inputText){
+        StringBuilder result = new StringBuilder();
+        for (char c : inputText.toCharArray()) {
+            result.append((int) c);
+        }
+        return result.toString();
+    }
 }

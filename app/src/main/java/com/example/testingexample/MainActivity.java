@@ -30,5 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 lblMain.setText(Utils.removeExcessiveSpacesFromString(inputString));
             }
         });
+
+        var a = 1;
+        var b = 2;
     }
 }

@@ -23,7 +23,7 @@ public class MainActivityUITest {
     @Test
     public void testWhenTextStringIsEnteredToTxtMain() {
         final String givenString = "Hello   world   with    extra    empty spaces  ";
-        final String expectedResult = "Hello world with extra empty spaces ";
+        final String expectedResult = "Hello world with extra empty spaces";
 
         //Not working: https://stackoverflow.com/questions/20436968/espresso-typetext-not-working
         //onView(withId(R.id.txtMain)).perform(click(), typeText(givenString));
