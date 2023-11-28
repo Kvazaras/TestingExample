@@ -124,15 +124,14 @@ public class UtilsClassUnitTest {
         assertEquals(expectedResult, actualResult);
     }
 
-
-
-//    @Test
-//    public void Given_LettersString_When_changeCharactersToUnicodeIsCalledWithNumbersOnly_Then_ReturnedInitialString(){
-//        final String givenString = "abc";
-//
-//        final String expectedResult = "979899";
-//        final String actualResult = Utils.changeCharactersToUnicode(givenString);
-//
-//        assertEquals(expectedResult, actualResult);
-//    }
+    //Demonstrate test coverage
+    //    @Test
+    //    public void Given_LettersString_When_changeCharactersToUnicodeIsCalledWithNumbersOnly_Then_ReturnedInitialString(){
+    //        final String givenString = "abc";
+    //
+    //        final String expectedResult = "979899";
+    //        final String actualResult = Utils.changeCharactersToUnicode(givenString);
+    //
+    //        assertEquals(expectedResult, actualResult);
+    //    }
 }

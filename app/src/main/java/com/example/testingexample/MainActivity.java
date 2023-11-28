@@ -9,11 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     private EditText txtMain;
     private TextView lblMain;
     private Button btnMain;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +22,9 @@ public class MainActivity extends AppCompatActivity {
         this.lblMain = findViewById(R.id.lblMain);
         this.btnMain = findViewById(R.id.btnMain);
 
-        this.btnMain.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                final String inputString = txtMain.getText().toString();
-                lblMain.setText(Utils.removeExcessiveSpacesFromString(inputString));
-            }
+        this.btnMain.setOnClickListener(v -> {
+            final String inputString = txtMain.getText().toString();
+            lblMain.setText(Utils.removeNumbersFromString(inputString));
         });
 
         var a = 1;
